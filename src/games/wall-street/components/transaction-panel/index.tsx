@@ -60,22 +60,26 @@ function Tab({ trending }: Props) {
         <span className="text-sm">R$ {sum(list)}</span>
       </div>
 
-      <div className="h-full flex-shrink-1 flex-grow basis-0  px-3 overflow-y-scroll scrollbar-w-0 min-h-[300px] max-h-[300px] scrollbar-track-gray-400 scrollbar-thumb-gray-700 scrollbar scrollbar-track-rounded scrollbar-thumb-rounded">
+      <div className="h-full flex-shrink-1 flex-grow basis-0  px-3 overflow-y-scroll scrollbar-w-0 min-h-[190px] max-h-[190px] scrollbar-track-gray-400 scrollbar-thumb-gray-700 scrollbar scrollbar-track-rounded scrollbar-thumb-rounded">
 
         <div className="flex flex-col ">
-          {list.map((item, index) => {
+          {list.map((item, index) => { console.log(item);
             if (item)
               return (
                 <div
                   key={index}
-                  className="border-b last:border-b-0 px-3 py-1 border-b-slate-700 grid grid-cols-12"
+                  className="border-b-1 last:border-b-0 rounded-md px-3 py-1 w-100 flex justify-between align-bottom bg-slate-800"
                 >
-                  <div className="col-span-8">
+                  <div className='flex gap-2'>
+                  <img
+                    src="https://www.fiscalti.com.br/wp-content/uploads/2021/02/default-user-image.png"
+                    className="h-4 invert rounded-full"
+                  />
                     <span className="text-xs">
                       {item.player.username}
                     </span>
                   </div>
-                  <div className="col-span-4">
+                  <div className=' flex'>
                     <span className="text-xs">{item.amount}</span>
                   </div>
                 </div>
